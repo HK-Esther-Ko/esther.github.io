@@ -3,69 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esther Ko | Marketing Portfolio</title>
+  <title>Esther Ko — Marketing Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <span class="logo">Esther Ko</span>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Esther Ko</a>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="work.html">WORK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="resume.pdf" target="_blank" class="nav-resume">RESUME ↗</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <h1>Hi, I'm Esther 👋</h1>
-    <p>Marketing strategist & community builder based in Texas.</p>
-    <a href="#projects" class="btn">See My Work</a>
+  <!-- ── HERO ── -->
+  <section id="hero" class="container">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Marketing · Content · Visual Stories</p>
+      <h1>
+        I TURN STORIES<br>
+        INTO CONTENT<br>
+        <span class="accent">PEOPLE STOP FOR.</span>
+      </h1>
+      <p class="hero-sub">
+        Marketing strategist and visual storyteller working across social media,
+        brand experiences, content systems, and digital products.
+      </p>
+      <div class="hero-actions">
+        <a href="work.html" class="btn btn-primary">View Selected Work</a>
+        <a href="about.html" class="btn btn-outline">About Me</a>
+      </div>
+    </div>
+    <div class="hero-visual">Add photo / hero visual</div>
+    <p class="hero-scroll-hint">Scroll to explore</p>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I lead community-driven marketing initiatives through FIESTA and FoundHERs,
-      focusing on authentic storytelling and measurable impact.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>FIESTA</h3>
-        <p>Community event marketing campaign — describe results here.</p>
+  <!-- ── SELECTED WORK ── -->
+  <section id="selected-work">
+    <div class="container">
+      <div class="sw-header">
+        <h2 class="sw-title">Selected Work</h2>
+        <a href="work.html" class="sw-link">View All Projects →</a>
       </div>
 
-      <div class="card">
-        <h3>FoundHERs</h3>
-        <p>Women entrepreneur platform — describe your role & impact here.</p>
-      </div>
+      <div class="sw-grid">
 
-      <div class="card">
-        <h3>Project 3</h3>
-        <p>Add another project here.</p>
-      </div>
+        <!-- 01 FIESTA — full width, wide -->
+        <a href="projects/fiesta.html" class="sw-card">
+          <div class="sw-thumb">Add FIESTA cover image</div>
+          <div class="sw-info">
+            <div class="sw-meta">
+              <span class="sw-num">01 · Social Strategy</span>
+              <span class="sw-arrow">↗</span>
+            </div>
+            <h3 class="sw-name">FIESTA Social Media Growth</h3>
+            <p class="sw-desc">Social media strategy and measurable growth for Austin's founder community. +229% Reach · +172% Interactions</p>
+            <div class="sw-tags">
+              <span class="tag">Social Strategy</span>
+              <span class="tag">Content Creation</span>
+              <span class="tag">Analytics</span>
+            </div>
+          </div>
+        </a>
 
+        <!-- 02 FoundHERs — left 7/12 -->
+        <a href="projects/foundHERs.html" class="sw-card">
+          <div class="sw-thumb">Add FoundHERs cover image</div>
+          <div class="sw-info">
+            <div class="sw-meta">
+              <span class="sw-num">02 · Brand Launch</span>
+              <span class="sw-arrow">↗</span>
+            </div>
+            <h3 class="sw-name">FoundHERs Brand Launch</h3>
+            <p class="sw-desc">Launching a new brand and social presence for women founders. 2.3K Views in Month One.</p>
+            <div class="sw-tags">
+              <span class="tag">Brand Launch</span>
+              <span class="tag">Visual Identity</span>
+              <span class="tag">Community</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 03 Shinhan — right 5/12 -->
+        <a href="projects/shinhan.html" class="sw-card">
+          <div class="sw-thumb">Add Shinhan cover image</div>
+          <div class="sw-info">
+            <div class="sw-meta">
+              <span class="sw-num">03 · Campaign</span>
+              <span class="sw-arrow">↗</span>
+            </div>
+            <h3 class="sw-name">Shinhan Securities Gen Z</h3>
+            <p class="sw-desc">Making financial content approachable for a Gen Z audience.</p>
+            <div class="sw-tags">
+              <span class="tag">Campaign Strategy</span>
+              <span class="tag">Financial Content</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 04 CommCopilot — left col, tall -->
+        <a href="projects/commcopilot.html" class="sw-card">
+          <div class="sw-thumb">Add CommCopilot cover image</div>
+          <div class="sw-info">
+            <div class="sw-meta">
+              <span class="sw-num">04 · Product & UX</span>
+              <span class="sw-arrow">↗</span>
+            </div>
+            <h3 class="sw-name">CommCopilot</h3>
+            <p class="sw-desc">Designing an AI communication product through research and Figma.</p>
+            <div class="sw-tags">
+              <span class="tag">Product Strategy</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Let's Connect</h2>
-    <p>Email: <a href="mailto:hko1@angelo.edu">hko1@angelo.edu</a></p>
+  <!-- ── SELECTED IMPACT ── -->
+  <section id="impact">
+    <div class="container">
+      <div class="impact-header">
+        <p class="eyebrow">Selected Impact</p>
+        <p class="impact-note">Results from managing FIESTA and launching FoundHERs social media.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-num">+229%</div>
+          <div class="impact-label">Reach</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">+172%</div>
+          <div class="impact-label">Interactions</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">13.5K</div>
+          <div class="impact-label">Views</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">2</div>
+          <div class="impact-label">Accounts Managed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT I DO ── -->
+  <section id="what-i-do">
+    <div class="container">
+      <div class="wid-inner">
+        <p class="eyebrow">What I Do</p>
+        <div class="wid-skills">
+          SOCIAL STRATEGY<span class="sep">/</span>BRAND STORYTELLING<span class="sep">/</span>CONTENT DESIGN<br>
+          SHORT-FORM VIDEO<span class="sep">/</span>FIGMA<span class="sep">/</span>AI-ASSISTED WORKFLOWS
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT CTA ── -->
+  <section id="contact-cta">
+    <div class="container">
+      <p class="cta-pre">Let's work together</p>
+      <h2 class="cta-title">Have a story or idea<br>worth building?</h2>
+      <div class="cta-links">
+        <a href="mailto:hko1@angelo.edu">hko1@angelo.edu ↗</a>
+        <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn ↗</a>
+        <a href="resume.pdf" target="_blank">Download Resume ↗</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Esther Ko</p>
+    <div class="container footer-inner">
+      <span>© 2026 Esther Ko</span>
+      <nav class="footer-nav">
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.pdf" target="_blank">Resume ↗</a>
+      </nav>
+    </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
 
 </body>
 </html>
