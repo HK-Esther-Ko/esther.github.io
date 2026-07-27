@@ -86,7 +86,7 @@ nav {
 .nav-logo {
   font-size: 0.88rem;
   font-weight: 900;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 0.15s;
 }
@@ -147,8 +147,8 @@ nav {
 #hero {
   min-height: calc(92vh - var(--nav-h));
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 4rem;
+  grid-template-columns: 1fr 460px;
+  gap: 3rem;
   align-items: center;
   padding: 5rem 0;
   border-bottom: 1px solid var(--border);
@@ -167,8 +167,8 @@ nav {
 .hero-text h1 {
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 0.96;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -183,7 +183,7 @@ nav {
 .hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .hero-visual {
   aspect-ratio: 3/4;
-  background: var(--pastel-5);
+  background: transparent;
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -193,7 +193,7 @@ nav {
   color: #bbb;
   letter-spacing: 0.04em;
 }
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+.hero-visual img { width: 100%; height: 100%; object-fit: contain; }
 .hero-scroll-hint {
   position: absolute;
   bottom: 2rem;
@@ -225,7 +225,7 @@ nav {
 .sw-title {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 .sw-link {
   font-size: 0.68rem;
@@ -344,6 +344,7 @@ nav {
   letter-spacing: -0.06em;
   line-height: 1;
   margin-bottom: 0.6rem;
+  color: #FF3D7F;
 }
 .impact-label {
   font-size: 0.7rem;
@@ -400,9 +401,9 @@ nav {
 .cta-title {
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  line-height: 1.08;
+  line-height: 1.15;
   max-width: 740px;
   margin: 0 auto 3rem;
 }
@@ -580,7 +581,7 @@ footer {
 }
 .persona-img {
   aspect-ratio: 3/4;
-  background: var(--warm);
+  background: transparent;
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -590,7 +591,7 @@ footer {
   color: #bbb;
   margin-bottom: 1.5rem;
 }
-.persona-img img { width: 100%; height: 100%; object-fit: cover; }
+.persona-img img { width: 100%; height: 100%; object-fit: contain; }
 .persona-sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
 .persona-sidebar-links a {
   font-size: 0.78rem;
