@@ -5,10 +5,15 @@
   --bg:      #FAF8F5;
   --fg:      #111111;
   --muted:   #888888;
-  --accent:  #E8622A;
-  --border:  #E2DDD6;
+  --accent:  #FFAFCC;
+  --border:  #E7DCEC;
   --white:   #FFFFFF;
-  --warm:    #F0EDE6;
+  --warm:    #BDE0FE;
+  --pastel-1: #CDB4DB;
+  --pastel-2: #FFC8DD;
+  --pastel-3: #FFAFCC;
+  --pastel-4: #BDE0FE;
+  --pastel-5: #A2D2FF;
   --font:    'Inter', system-ui, -apple-system, sans-serif;
   --nav-h:   60px;
   --max-w:   1120px;
@@ -50,11 +55,17 @@ body::before {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.55rem;
-  border-radius: 2px;
+  color: var(--fg);
+  background: var(--pastel-4);
+  border: none;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
 }
+.tag:nth-child(5n+1) { background: var(--pastel-1); }
+.tag:nth-child(5n+2) { background: var(--pastel-2); }
+.tag:nth-child(5n+3) { background: var(--pastel-3); }
+.tag:nth-child(5n+4) { background: var(--pastel-4); }
+.tag:nth-child(5n+5) { background: var(--pastel-5); }
 
 /* ── Navigation ── */
 nav {
@@ -118,8 +129,8 @@ nav {
 .btn-outline { border: 1.5px solid var(--fg); color: var(--fg); }
 .btn-outline:hover { background: var(--fg); color: var(--white); }
 .btn-sm { padding: 0.45rem 1rem; font-size: 0.72rem; }
-.btn-accent { background: var(--accent); color: var(--white); }
-.btn-accent:hover { background: #d4551f; }
+.btn-accent { background: var(--accent); color: var(--fg); }
+.btn-accent:hover { background: var(--pastel-5); }
 
 /* ── Section label ── */
 .eyebrow {
@@ -172,7 +183,7 @@ nav {
 .hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .hero-visual {
   aspect-ratio: 3/4;
-  background: var(--warm);
+  background: var(--pastel-5);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -245,6 +256,10 @@ nav {
   color: #ccc;
   position: relative;
 }
+.sw-card:nth-child(1) .sw-thumb { background: var(--pastel-1); }
+.sw-card:nth-child(2) .sw-thumb { background: var(--pastel-2); }
+.sw-card:nth-child(3) .sw-thumb { background: var(--pastel-3); }
+.sw-card:nth-child(4) .sw-thumb { background: var(--pastel-4); }
 
 .sw-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .sw-card:hover .sw-thumb img { transform: scale(1.04); }
@@ -321,6 +336,7 @@ nav {
 .impact-item {
   padding: 0 2.5rem;
   border-right: 1px solid var(--border);
+  text-align: center;
 }
 .impact-num {
   font-size: clamp(2.8rem, 5vw, 4.5rem);
