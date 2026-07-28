@@ -15,6 +15,7 @@
         <li><a href="../index.html">HOME</a></li>
         <li><a href="../work.html" class="active">WORK</a></li>
         <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="https://www.linkedin.com/in/hyunkyung-esther-ko/" target="_blank" class="nav-linkedin">LINKEDIN ↗</a></li>
         <li><a href="../resume.pdf" target="_blank" class="nav-resume">RESUME ↗</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
@@ -29,7 +30,7 @@
 
   <section class="project-hero">
     <div class="container">
-      <p class="eyebrow">04 · Product & UX</p>
+      <p class="eyebrow">03 · Product & UX</p>
       <h1>COMMCOPILOT</h1>
       <p class="project-subtitle">
         Designing an AI conversation copilot based on user research with international students.
@@ -123,12 +124,25 @@
 
     <div class="ps">
       <p class="ps-label">Selected Work</p>
-      <div class="gallery">
-        <div class="gi">Research synthesis</div>
-        <div class="gi">User flow</div>
-        <div class="gi">UI screens</div>
+
+      <h3>Research &amp; Synthesis</h3>
+      <div class="gallery gallery-2">
+        <div class="gi gi-1920x1080 gi-zoomable" tabindex="0" role="button" aria-label="View research board — interview themes and pain points, larger"><img src="../images/commcopilot-research-1.png" alt="CommCopilot research board — interview themes and pain points"></div>
+        <div class="gi gi-1920x1080 gi-zoomable" tabindex="0" role="button" aria-label="View user persona and opportunity synthesis, larger"><img src="../images/commcopilot-research-2.png" alt="CommCopilot user persona and opportunity synthesis"></div>
       </div>
-      <p class="gallery-note">Add Figma screens, research boards, and prototype screenshots here.</p>
+      <p class="gallery-note">Interview synthesis and persona boards from the research phase. Click to view larger.</p>
+
+      <h3>User Flow</h3>
+      <div class="gi gi-wide gi-1920x1080 gi-zoomable" tabindex="0" role="button" aria-label="View core user flow diagram, larger"><img src="../images/commcopilot-userflow.png" alt="CommCopilot core user flow diagram"></div>
+      <p class="gallery-note">Mapped flow across onboarding, core tool, and settings. Click to view larger.</p>
+
+      <h3>UI Screens</h3>
+      <div class="gallery">
+        <div class="gi gi-iphone"><img src="../images/commcopilot-ui-1.png" alt="CommCopilot UI screen — onboarding"></div>
+        <div class="gi gi-iphone"><img src="../images/commcopilot-ui-2.png" alt="CommCopilot UI screen — core tool"></div>
+        <div class="gi gi-iphone"><img src="../images/commcopilot-ui-3.png" alt="CommCopilot UI screen — settings"></div>
+      </div>
+      <p class="gallery-note">Figma prototype screens: onboarding, core tool, and settings.</p>
     </div>
 
     <div class="ps">
@@ -144,12 +158,18 @@
     <div class="next-project">
       <div>
         <p class="np-label">Next Project</p>
-        <a href="kosdaq.html">
-          <p class="np-title">KOSDAQ Editorial Workflow →</p>
+        <a href="shinhan.html">
+          <p class="np-title">Shinhan Securities Gen Z Campaign →</p>
         </a>
       </div>
     </div>
 
+  </div>
+
+  <!-- Lightbox for larger image previews -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
   </div>
 
   <footer>
@@ -167,6 +187,46 @@
     const toggle = document.getElementById('nav-toggle');
     const menu   = document.getElementById('nav-menu');
     toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+    // Lightbox — click Research & Synthesis / User Flow images to view larger
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxClose = document.getElementById('lightboxClose');
+    let lastFocused = null;
+
+    function openLightbox(trigger) {
+      lastFocused = trigger;
+      const img = trigger.querySelector('img');
+      if (img) {
+        lightboxContent.innerHTML = '';
+        lightboxContent.appendChild(img.cloneNode(true));
+      }
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      lightboxClose.focus();
+      document.addEventListener('keydown', onLightboxKeydown);
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('keydown', onLightboxKeydown);
+      if (lastFocused) lastFocused.focus();
+    }
+
+    function onLightboxKeydown(e) {
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'Tab') { e.preventDefault(); lightboxClose.focus(); }
+    }
+
+    document.querySelectorAll('.gi-zoomable').forEach(el => {
+      el.addEventListener('click', () => openLightbox(el));
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(el); }
+      });
+    });
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   </script>
 
 </body>
