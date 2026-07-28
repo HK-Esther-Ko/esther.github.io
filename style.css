@@ -986,6 +986,34 @@ footer {
   gap: 6px;
   margin: 1.25rem 0;
 }
+/* Full-size stack — no cropping, images shown at their natural aspect ratio */
+.gallery-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+.gallery-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+/* Same idea, one row instead of stacked */
+.gallery-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+.gallery-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 0;
+}
 .gi {
   background: var(--warm);
   border-radius: 2px;
@@ -1300,4 +1328,5 @@ footer {
   }
   .p-step:first-child::after { display: block; }
   .p-step:last-child::after { display: none; }
+  .gallery-row { flex-direction: column; }
 }
